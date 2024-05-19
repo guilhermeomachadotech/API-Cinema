@@ -20,4 +20,35 @@ class FilmePorCategoriaController extends Controller
         $filmescategoria=FilmePorCategoria::all();
         return $filmescategoria;
     }
+
+    public function filmesAcaoAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '1')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
+    public function filmesAnimacaoAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '2')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
+    public function filmesAventuraAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '3')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
+    public function filmesComediaAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '4')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
+    public function filmesDramaAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '5')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
+    public function filmesSuspenseAPI(){
+        $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '6')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
+        ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
+        return $filmescategoria;
+    }
 }

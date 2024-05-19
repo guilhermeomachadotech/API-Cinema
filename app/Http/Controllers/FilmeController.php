@@ -11,7 +11,10 @@ class FilmeController extends Controller
         $filmes=Filmes::all();
         foreach($filmes as $f){
             echo "$f->idFilme";
-            echo "$f->tituloFilme";
+            echo " $f->tituloFilme";
+            echo " $f->imgFilme";
+            echo " $f->duracaoFilme";
+            echo " $f->classificacaoFilme";
             echo "$f->anoLancamento";
             echo "<br>";
         }
