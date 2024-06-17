@@ -24,4 +24,13 @@ class FilmeController extends Controller
         $filmes=Filmes::all();
         return $filmes;
     }
+    public function storeApi(Request $request){
+        $filmes= new Filmes();
+        $filmes->tituloFilme = $request->tituloFilme;
+        $filmes->imgFilme = $request->imgFilme;
+        $filmes->duracaoFilme = $request->duracaoFilme;
+        $filmes->classificacaoFilme = $request->classificacaoFilme;
+        $filmes->anoLancamento = $request->anoLancamento;
+        $filmes->save();
+    }
 }

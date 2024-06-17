@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Cliente;
+use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
@@ -18,5 +18,15 @@ class ClienteController extends Controller
     public function indexAPI(){
         $cliente=Cliente::all();
         return $cliente;
+    }
+
+    public function storeApi(Request $request){
+        $cliente = new Cliente();
+
+        $cliente->nome =$request->nome;
+        $cliente->email =$request->email;
+        $cliente->senha = $request->senha;
+
+        $cliente->save(); //Salva a inserção no banco
     }
 }
