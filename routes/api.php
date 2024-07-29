@@ -37,3 +37,9 @@ Route::get('/filme-aventura', "App\Http\Controllers\FilmePorCategoriaController@
 Route::get('/filme-comedia', "App\Http\Controllers\FilmePorCategoriaController@filmesComediaAPI");
 
 Route::get('/cliente', "App\Http\Controllers\ClienteController@indexAPI");
+
+Route::post('/cliente','App\Http\Controllers\ClienteController@storeApi');
+
+Route::post('/filme','App\Http\Controllers\FilmeController@storeApi');
+
+Route::post('/categoria','App\Http\Controllers\CategoriaController@storeApi');
