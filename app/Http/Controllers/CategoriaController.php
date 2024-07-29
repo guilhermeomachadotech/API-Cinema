@@ -19,4 +19,10 @@ class CategoriaController extends Controller
         $categoria=Categoria::all();
         return $categoria;
     }
+
+    public function storeApi(Request $request){
+        $categoria= new Categoria();
+        $categoria->nomeCategoria= $request->nomeCategoria;
+        $categoria->save();
+    }
 }
