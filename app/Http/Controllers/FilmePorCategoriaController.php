@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FilmePorCategoria;
+use Illuminate\Support\Facades\DB;
 
 class FilmePorCategoriaController extends Controller
 {
@@ -50,5 +51,11 @@ class FilmePorCategoriaController extends Controller
         $filmescategoria=FilmePorCategoria::where('idCategoria', '=', '6')->leftJoin('filmes', 'filme_por_categorias.idFilme', '=', 'filmes.idFilme')
         ->select('filmes.tituloFilme', 'filmes.imgFilme', 'filmes.duracaoFilme', 'filmes.classificacaoFilme', 'filmes.anoLancamento')->get();
         return $filmescategoria;
+    }
+
+    public function qtddFilmesPorCategoria(){
+        $qtddPorCategoria = FilmePorCategoria::join('categorias', 'filme_por_categorias.idCategoria', '=', 'categorias.idCategoria')->select('categorias.nomeCategoria', DB::raw('count(filme_por_categorias.idFilme) as total'))->groupBy('categorias.nomeCategoria')->get();
+
+        return $qtddPorCategoria;
     }
 }

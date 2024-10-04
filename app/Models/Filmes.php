@@ -7,6 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filmes extends Model
 {
-    use HasFactory;
+    protected $table = 'filmes';
+
+    protected $incremeting = true;
+    protected $keyType = 'int';
+    protected $primaryKey = 'idFilme';
+
+    /**
+    *@var bool;
+    */
+
+    
     protected $fillable=['tituloFilme', 'imgFilme', 'duracaoFilme', 'classificacaoFilme', 'anoLancamentoFilme'];
+
+    public function categorias(){
+        return $this->belongsToMany(Categoria::class, 'filme_por_categorias', 'idCategoria', 'idFilme');
+    }
+
+    use HasFactory;
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FilmePorCategoriaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,5 @@ Route::post('/cliente','App\Http\Controllers\ClienteController@storeApi');
 Route::post('/filme','App\Http\Controllers\FilmeController@storeApi');
 
 Route::post('/categoria','App\Http\Controllers\CategoriaController@storeApi');
+
+Route::get('/filmes-por-categoria-qtdd', [FilmePorCategoriaController::class, 'qtddFilmesPorCategoria']);
