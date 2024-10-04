@@ -33,5 +33,8 @@ class FilmeController extends Controller
         $filmes->anoLancamento = $request->anoLancamento;
         $filmes->save();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 470f68c783c025d1e81b9a385f10748aa6927f2c
 }
