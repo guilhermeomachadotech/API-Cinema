@@ -43,10 +43,6 @@ Route::post('/cliente','App\Http\Controllers\ClienteController@storeApi');
 
 Route::post('/filme','App\Http\Controllers\FilmeController@storeApi');
 
-<<<<<<< HEAD
 Route::post('/categoria','App\Http\Controllers\CategoriaController@storeApi');
 
 Route::get('/filmes-por-categoria-qtdd', [FilmePorCategoriaController::class, 'qtddFilmesPorCategoria']);
-=======
-Route::post('/categoria','App\Http\Controllers\CategoriaController@storeApi');
->>>>>>> 470f68c783c025d1e81b9a385f10748aa6927f2c
